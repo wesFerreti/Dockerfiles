@@ -5,3 +5,8 @@ docker container update -m 50096000 --memory-swap -1 sql_container
 Open sqlbash
 docker run -itd --name sqlserver2.0 -v /home/wesley/Documents/SQL:/home/BancoDeDados sqlimagefromfile3.0 
 /opt/mssql-tools/sqlcmd -S localhost -U SA -P Senha123
+
+Quando um volume é criado por um dockerfile, ele ficará ativo dentro do container (exemplo /data)
+e a pasta host será gerada aleatoriamente pelo docker. Var/lib/docker/volumes
+
+QUando é passado um -v para o comando run, vc consegue especificar aonde será a pasta do host
